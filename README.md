@@ -49,6 +49,7 @@ Then open the notebook file (`coin_segmentation.ipynb`).
 - The algorithm **successfully detects and counts** coins in various images.
 - **Hough Circle Transform** improves accuracy in detecting circular objects.
 - Some **false detections** may occur if background noise is not removed properly.
+- False detection can also occur if coins are **shiny**, as reflections may interfere with edge detection.
 - Adjusting **morphological operations and Hough Transform parameters** can improve accuracy.
 
 ## **Dependencies**
