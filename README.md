@@ -4,6 +4,7 @@
 This project performs **coin segmentation and counting** using **OpenCV and Python**. The process includes:
 - Detecting **edges and contours** in an image.
 - Applying **region-based segmentation** to isolate individual coins.
+- Converting the image to **HSV color space** for better segmentation.
 - Using **Hough Circle Transform** to detect and count circular objects.
 - Displaying **segmented coins** and labeling them with their count.
 
@@ -23,13 +24,14 @@ Then open the notebook file (`coin_segmentation.ipynb`).
 
 ### **3. Run the Notebook Cells**
 - Load the image.
-- Preprocess the image (grayscale, thresholding, morphological operations).
+- Preprocess the image (convert to **HSV**, grayscale, thresholding, morphological operations).
 - Detect and segment the coins.
 - Show the results, including detected coins and individual coin images.
 
 ## **Methods Used**
 ### **1. Preprocessing**
-- Convert the image to **grayscale**.
+- Convert the image to **HSV color space** to handle lighting variations.
+- Extract the **Value (V) channel** to enhance contrast.
 - Apply **Gaussian Blur** to remove noise.
 - Use **adaptive thresholding** and **morphological operations** to refine edges.
 
@@ -47,6 +49,7 @@ Then open the notebook file (`coin_segmentation.ipynb`).
 
 ## **Results and Observations**
 - The algorithm **successfully detects and counts** coins in various images.
+- **HSV conversion** improves detection in images with **lighting variations**.
 - **Hough Circle Transform** improves accuracy in detecting circular objects.
 - Some **false detections** may occur if background noise is not removed properly.
 - False detection can also occur if coins are **shiny**, as reflections may interfere with edge detection.
