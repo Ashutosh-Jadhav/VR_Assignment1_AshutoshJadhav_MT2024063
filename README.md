@@ -63,15 +63,10 @@ To run this project, you need:
 - Matplotlib
 
   ## **Sample Outputs**
-
+### **Detected Coins**
+![Detected Coins](output/detection.jpg)
 ### **Segmented Coins**
 ![Segmented Coins](output/segmented_coins.jpg)
 
-### **Detected Contours**
-![Detected Contours](output/contours.jpg)
-
-### **Extracted Individual Coins**
-![Coin 1](output/individual_coin_1.jpg)
-![Coin 2](output/individual_coin_2.jpg)
 
 
