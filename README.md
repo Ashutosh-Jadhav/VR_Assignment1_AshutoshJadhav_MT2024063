@@ -46,18 +46,13 @@ Then open the notebook file (`coin_segmentation.ipynb`).
 - Apply `cv2.HoughCircles()` to detect circular objects (coins).
 - Label detected coins with numbers using `cv2.putText()`.
 
-### **4. Extracting and Displaying Individual Coins**
-- Use `cv2.boundingRect()` to extract each coin.
-- Display each extracted coin separately using `cv2.imshow()` or Matplotlib.
-
 ## **Results and Observations**
 - The algorithm **successfully detects and counts** coins in various images.
 - **HSV conversion** improves detection in images with **lighting variations**.
 - **Gray color masking** helps in filtering out non-coin regions.
 - **Hough Circle Transform** improves accuracy in detecting circular objects.
-- **Canny edge detection** enhances contour definition for better segmentation.
 - Some **false detections** may occur if background noise is not removed properly.
-- False detection can also occur if coins are **shiny**, as reflections may interfere with edge detection.
+- False detection can also occur if coins are **shiny**.
 - Adjusting **morphological operations and Hough Transform parameters** can improve accuracy.
 
 ## **Dependencies**
@@ -67,12 +62,4 @@ To run this project, you need:
 - OpenCV (`cv2`)
 - NumPy
 - Matplotlib
-
-## **Future Improvements**
-- Improve **adaptive thresholding** for better segmentation.
-- Implement **machine learning-based object detection** for more accuracy.
-- Enhance visualization with **bounding circles instead of rectangles**.
-
----
-This README provides all necessary details to run and understand the project. Happy coding! 🚀
 
