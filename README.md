@@ -32,7 +32,6 @@ Then open the notebook file (`coin_segmentation.ipynb`).
 ## **Methods Used**
 ### **1. Preprocessing**
 - Convert the image to **HSV color space** to handle lighting variations.
-- Extract the **Value (V) channel** to enhance contrast.
 - Apply **gray color masking** to isolate potential coin regions.
 - Apply **Gaussian Blur** to remove noise.
 - Use **adaptive thresholding** and **morphological operations** to refine edges.
@@ -52,7 +51,7 @@ Then open the notebook file (`coin_segmentation.ipynb`).
 - **Gray color masking** helps in filtering out non-coin regions.
 - **Hough Circle Transform** improves accuracy in detecting circular objects.
 - Some **false detections** may occur if background noise is not removed properly.
-- False detection can also occur if coins are **shiny**.
+- False detection can also occur if coins are **shiny**, more illumination.
 - Adjusting **morphological operations and Hough Transform parameters** can improve accuracy.
 
 ## **Dependencies**
