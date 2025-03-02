@@ -1,6 +1,6 @@
 # Coin Segmentation and Counting
 
-## **Project Overview**
+## **Overview**
 This project performs **coin segmentation and counting** using **OpenCV and Python**. The process includes:
 - Detecting **edges and contours** in an image.
 - Applying **region-based segmentation** to isolate individual coins.
@@ -68,5 +68,73 @@ To run this project, you need:
 ### **Segmented Coins**
 ![Segmented Coins](output/segmented_coins.jpg)
 
+---
 
+# Panorama Stitching
 
+## **Project Overview**
+This project performs **panorama stitching** using **SIFT-based feature detection and homography transformation**. The process includes:
+- Detecting **key points in overlapping images**.
+- Matching key points using **Brute-Force Matcher with Euclidean distance**.
+- Computing **homography using RANSAC** to align images.
+- Warping images and blending them into a **seamless panorama**.
+
+## **How to Run the Code**
+### **1. Install Required Dependencies**
+Before running the Jupyter Notebook, install the required libraries using:
+```bash
+pip install opencv-python numpy matplotlib
+```
+
+### **2. Open the Jupyter Notebook**
+Start Jupyter Notebook using:
+```bash
+jupyter notebook
+```
+Then open the notebook file (`panorama_stitching.ipynb`).
+
+### **3. Run the Notebook Cells**
+- Load three overlapping images.
+- Extract key points and match them using **SIFT**.
+- Compute **homography** and warp images to align them.
+- Generate and display the final **stitched panorama**.
+
+## **Methods Used**
+### **1. Keypoint Detection and Matching**
+- Convert images to **grayscale**.
+- Detect **SIFT keypoints and descriptors**.
+- Use **Brute-Force Matcher** to find corresponding points.
+- Sort matches by distance to keep the best ones.
+
+### **2. Homography Computation**
+- Extract matched keypoints from both images.
+- Compute **homography matrix** using **RANSAC** to remove outliers.
+- Apply **perspective warping** to align the images.
+
+### **3. Stitching Three Images Together**
+- Load `Image1.jpeg`, `Image2.jpeg`, and `Image3.jpeg`.
+- Call `stitch_three_images(img1, img2, img3)`, which:
+  - Stitches `img1` and `img2` first.
+  - Stitches the result with `img3`.
+  - Outputs the final **stitched panorama**.
+- Display the result using `display(Image.fromarray(final_panorama))`.
+- Save the output as `panorama_output.jpg`.
+
+## **Results and Observations**
+- **SIFT-based feature detection** successfully detects key points in images.
+- **Homography transformation** aligns images correctly.
+- **Brute-Force Matching** provides good feature correspondences.
+- Some **seams may be visible**—improving blending techniques can help.
+- If keypoints are **poorly matched**, homography may fail.
+
+## **Dependencies**
+To run this project, you need:
+- Python 3.x
+- Jupyter Notebook
+- OpenCV (`cv2`)
+- NumPy
+- Matplotlib
+
+## **Sample Outputs**
+### **Panorama**
+![Detected Coins](output/panorama_output.jpg)
